@@ -95,9 +95,10 @@
                     <h5 class="card-title">Cyash</h5>
                         <p class="card-text"><%=review.comment%></p>
                         <p class="card-text"> <%=review.rating%></p>
-
-
-                 </div>
+                </div>
+                 <form class="mb-3" method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE"> 
+                    <button clas="btn btn-sm btn-dark">Delete</button>
+                 </form>
                  </div>
         
             <%}%>
