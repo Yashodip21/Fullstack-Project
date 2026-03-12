@@ -10,15 +10,8 @@ const listingSchema = new Schema({
   description: String,
 
   image: {
-    filename: {
-      type: String,
-      default: "listingimage",
-    },
-    url: {
-      type: String,
-      default:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    },
+   url:String,
+   filename:String,
   },
 
   price: Number,
@@ -32,7 +25,11 @@ const listingSchema = new Schema({
 
 
   }
-  ]
+  ],
+  owner:{
+     type:Schema.Types.ObjectId,
+     ref:"User",
+  }
 });
 
 listingSchema.post("findOneAndDelete",async(listing)=>{
@@ -40,6 +37,7 @@ listingSchema.post("findOneAndDelete",async(listing)=>{
     await Review.deleteMany({_id:{$in:listing.reviews}});
   }
 })
-
-const Listing = mongoose.model("Listing", listingSchema);
+// ✅ Replace with this
+// ✅ Correct — assign to variable first, then export
+const Listing = mongoose.models.Listing || mongoose.model('Listing', listingSchema);
 module.exports = Listing;
