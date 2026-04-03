@@ -59,6 +59,10 @@
 
                 <hr>
 
+                <div id="map" style="width: 100%; height: 300px; border-radius: 12px;" class="mb-4"></div>
+                
+                <hr>
+
                 <!-- REVIEW SECTION -->
                 <% if(currUser){ %>
                     <h4 class="mt-4">Leave a Review</h4>
@@ -142,6 +146,10 @@
 
             </div>
         </div>
+        <script>
+            const listingLocation = "<%= listing.location %>";
+        </script>
+        <script src="/js/map.js"></script>
       
         
            

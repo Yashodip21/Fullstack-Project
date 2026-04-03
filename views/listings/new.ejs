@@ -1,57 +1,60 @@
 <%layout("/layouts/boilerplate")%>
-    <div class="row">
-        <div class="col-8 offset-2" >
-            <br><br>
-    <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings" novalidate class="needs-validation"
-     enctype="multipart/form-data">
-    
-        <div class="mb-3">
-            <label class="form-label">Title</label>
-            <input name="listing[title]" placeholder="Enter title" type="text" class="form-control" required>
-           <div class="valid-feedback">Title looks good!</div>
-        <div class="invalid-feedback">Please enter a title.</div>
-        </div>
-    
-        <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea name="listing[description]" class="form-control" rows="3" required></textarea>
-        <div class="invalid-feedback">Please enter a description.</div>
-        </div>
-    
-        <!-- <div class="mb-3">
-            <label class="form-label">Image URL</label>
-            <input name="listing[image][url]" placeholder="Enter image URL" type="text" class="form-control">
-        </div> -->
-        <div class="mb-3">
-            <label class="form-label">Upload Listing Image</label>
-            <input name="listing[image]"  type="file" class="form-control">
-        </div>
-         <div class="row">
-        <div class="mb-3 col-md-4" >
-            <label class="form-label">Price</label>
-            <input name="listing[price]" placeholder="12,000"  class="form-control" required>
-        <div class="invalid-feedback">Please enter a valid price.</div>
+
+    <div class="auth-wrapper" style="align-items: flex-start; padding: 2rem 0;">
+        <div class="card auth-card shadow-sm" style="max-width: 680px;">
+
+            <div class="mb-4">
+                <h3 class="auth-title">Create a New Listing</h3>
+                <p class="auth-subtitle">Fill in the details to list your property</p>
+            </div>
+
+            <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label auth-label">Title</label>
+                    <input name="listing[title]" placeholder="Enter title" type="text" class="form-control auth-input"
+                        required>
+                    <div class="valid-feedback">Title looks good!</div>
+                    <div class="invalid-feedback">Please enter a title.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label auth-label">Description</label>
+                    <textarea name="listing[description]" class="form-control auth-input" rows="3" required></textarea>
+                    <div class="invalid-feedback">Please enter a description.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label auth-label">Upload Listing Image</label>
+                    <input name="listing[image]" type="file" class="form-control auth-input">
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label auth-label">Price</label>
+                        <input name="listing[price]" placeholder="12,000" class="form-control auth-input" required>
+                        <div class="invalid-feedback">Please enter a valid price.</div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label class="form-label auth-label">Country</label>
+                        <input name="listing[country]" placeholder="India" type="text" class="form-control auth-input"
+                            required>
+                        <div class="invalid-feedback">Please enter a country.</div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label auth-label">Location</label>
+                    <input name="listing[location]" placeholder="Krushi Nagar 4234, Nashik" type="text"
+                        class="form-control auth-input" required>
+                    <div class="invalid-feedback">Please enter a location.</div>
+                </div>
+
+                <button class="btn btn-dark w-100 auth-btn">Add Listing</button>
+
+            </form>
 
         </div>
-    
-        <div class="mb-3 col-md-8">
-            <label class="form-label">Country</label>
-            <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
-        <div class="invalid-feedback">Please enter a country.</div>
-        </div>
     </div>
-    
-        <div class="mb-3">
-            <label class="form-label">Location</label>
-            <input name="listing[location]" placeholder="Krushi Nagar 4234,Nashik" type="text" class="form-control" required>
-        <div class="invalid-feedback">Please enter a location.</div>
-        </div>
-        <br> <br>
-        <button class="btn btn-dark addbtn">Add</button>
-        <br> <br>
-    
-    </form>
- </div>
-</div>
 

@@ -1,30 +1,45 @@
 <%layout("/layouts/boilerplate")%>
 
-<div class="row">
-    <h1 class="col-6 offset-3">SignUp on Wanderlust</h1>
-    <div class="col-6 offset-3">
+<div class="auth-wrapper">
+    <div class="card auth-card shadow-sm">
+
+        <div class="text-center mb-4">
+            <h3 class="auth-title">Create an account</h3>
+            <p class="auth-subtitle">Join Wanderlust today</p>
+        </div>
+
         <form action="/signup" method="POST" class="needs-validation" novalidate>
+
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input name="username"
-                id="username"
-                 type="text"
-                 class="form-control"
-                  required/>
+                <label for="username" class="form-label auth-label">Username</label>
+                <input name="username" id="username" type="text" class="form-control auth-input"
+                    placeholder="Choose a username" required />
                 <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a username.</div>
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input name="email" id="email" type="email" class="form-control" required />
-                
+                <label for="email" class="form-label auth-label">Email</label>
+                <input name="email" id="email" type="email" class="form-control auth-input"
+                    placeholder="Enter your email" required />
+                <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
 
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input name="password" id="password" type="password" class="form-control" required />
-            </div> 
-            <button class="btn btn-suceessm btn-dark">Signup</button>
+            <div class="mb-4">
+                <label for="password" class="form-label auth-label">Password</label>
+                <input name="password" id="password" type="password" class="form-control auth-input"
+                    placeholder="Create a password" required />
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+
+            <button class="btn btn-dark w-100 auth-btn">Sign Up</button>
+
         </form>
+
+        <p class="text-center auth-footer-text mt-3 mb-0">
+            Already have an account?
+            <a href="/login" class="text-dark fw-medium">Login</a>
+        </p>
+
     </div>
 </div>

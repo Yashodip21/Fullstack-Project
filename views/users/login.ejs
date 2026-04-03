@@ -1,22 +1,37 @@
 <%layout("/layouts/boilerplate")%>
 
-    <div class="row">
-        <h1 class="col-6 offset-3">Login</h1>
-        <div class="col-6 offset-3">
-            <form action="/login" method="POST" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input name="username" id="username" type="text" class="form-control" required />
-                </div>
+<div class="auth-wrapper">
+    <div class="card auth-card shadow-sm">
 
-        
-
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input name="password"
-                     id="password" type="password" class="form-control" required />
-                </div>
-                <button class="btn btn-success ">login</button>
-            </form>
+        <div class="text-center mb-4">
+            <h3 class="auth-title">Welcome back</h3>
+            <p class="auth-subtitle">Login to your Wanderlust account</p>
         </div>
+
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+
+            <div class="mb-3">
+                <label for="username" class="form-label auth-label">Username</label>
+                <input name="username" id="username" type="text" class="form-control auth-input"
+                    placeholder="Enter your username" required />
+                <div class="invalid-feedback">Please enter your username.</div>
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="form-label auth-label">Password</label>
+                <input name="password" id="password" type="password" class="form-control auth-input"
+                    placeholder="Enter your password" required />
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <button class="btn btn-dark w-100 auth-btn">Login</button>
+
+        </form>
+
+        <p class="text-center auth-footer-text mt-3 mb-0">
+            Don't have an account?
+            <a href="/signup" class="text-dark fw-medium">Sign up</a>
+        </p>
+
     </div>
+</div>
